@@ -41,7 +41,10 @@
     <div class="avatar">
       <img [src]="employee.data.avatar" />
     </div>
-    <div class="info" [style.color]="employee.color">
+    <div 
+      class="info" 
+      [style.color]="employee.color"
+    >
       Age: {{ employee.data.age }}
       <br />
       <b>{{ employee.data.discipline }}</b>
