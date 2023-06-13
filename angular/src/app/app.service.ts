@@ -14,7 +14,7 @@ export interface Employee {
   discipline: string;
 }
 
-export class Data {
+export interface Data {
   text: string;
 
   employeeID: number;
