@@ -33,7 +33,7 @@ export class AppComponent {
     this.resourcesDataSource = service.getEmployees();
   }
 
-  onDeleteButtonClick(e: ClickEvent, appointmentData: dxSchedulerAppointment): void {
+  onDeleteButtonClick = (e: ClickEvent, appointmentData: dxSchedulerAppointment): void => {
     this.scheduler.instance.deleteAppointment(appointmentData);
     console.log('hi')
     e.event.stopPropagation();
