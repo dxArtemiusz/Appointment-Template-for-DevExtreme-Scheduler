@@ -47,7 +47,7 @@ export class AppComponent {
       return !isAppointmentDisabled && isDeleteAllowed;
   }
 
-  markWeekEnd = (cellData) => {
+  markWeekEnd = (cellData: any): Record<string, boolean> => {
     function isWeekEnd(date) {
       const day = date.getDay();
       return day === 0 || day === 6;
