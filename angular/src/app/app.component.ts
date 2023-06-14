@@ -64,7 +64,7 @@ export class AppComponent {
       'day-cell': true,
     };
 
-    classObject[AppComponent.getCurrentTraining(cellData.startDate.getDate(), cellData.groups.employeeID)] = true;
+    classObject[this.getCurrentTrainingClass(cellData.startDate.getDate(), cellData.groups.employeeID)] = true;
     return classObject;
   };
 
