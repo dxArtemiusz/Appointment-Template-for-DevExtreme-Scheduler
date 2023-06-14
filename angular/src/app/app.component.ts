@@ -9,9 +9,7 @@ import { ClickEvent } from 'devextreme/ui/button';
 import { dxSchedulerAppointment } from 'devextreme/ui/scheduler';
 import { TooltipModule } from './tooltip/tooltip.component';
 
-if (!/localhost/.test(document.location.host)) {
-  enableProdMode();
-}
+
 
 @Component({
   selector: 'app-root',
@@ -98,5 +96,3 @@ export class AppComponent {
   bootstrap: [AppComponent],
 })
 export class AppModule { }
-
-platformBrowserDynamic().bootstrapModule(AppModule);
