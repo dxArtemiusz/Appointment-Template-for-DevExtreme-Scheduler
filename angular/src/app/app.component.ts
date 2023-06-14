@@ -76,10 +76,9 @@ export class AppComponent {
   }
 
 
-  getColor = (id) => {
-    return this.resourcesDataSource.find((employee) => {
-      return employee.id === id;
-    }).color;
+  getColor = (id: number): string => this.resourcesDataSource.find((employee) => 
+        employee.id === id
+      ).color;
   }
 }
 
