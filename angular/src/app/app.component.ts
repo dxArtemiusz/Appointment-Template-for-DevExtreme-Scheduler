@@ -28,11 +28,7 @@ export class AppComponent {
 
   resourcesDataSource = this.service.getEmployees();
 
-  constructor(service: Service) {
-    this.dataSource = new DataSource({
-      store: service.getData(),
-    });
-    this.resourcesDataSource = service.getEmployees();
+  constructor(private service: Service) {
   }
 
   onDeleteButtonClick = (e: ClickEvent, appointmentData: dxSchedulerAppointment): void => {
