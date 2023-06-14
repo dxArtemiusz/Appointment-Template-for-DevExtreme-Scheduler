@@ -32,10 +32,10 @@ export class AppComponent {
   }
 
   onDeleteButtonClick = (e: ClickEvent, appointmentData: dxSchedulerAppointment): void => {
-    this.scheduler.instance.deleteAppointment(appointmentData);
-    console.log('hi')
+    const schedulerInstance = this.scheduler.instance;
+    schedulerInstance.deleteAppointment(appointmentData);
     e.event.stopPropagation();
-    this.scheduler.instance.hideAppointmentTooltip();
+    schedulerInstance.hideAppointmentTooltip();
   }
 
   isDeleteButtonExist = ({ appointmentData }: { appointmentData: dxSchedulerAppointment}): boolean => {
