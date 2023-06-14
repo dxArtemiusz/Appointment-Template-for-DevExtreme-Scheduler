@@ -59,7 +59,7 @@ export class AppComponent {
     };
   };
 
-  markTraining = (cellData) => {
+  markTraining = (cellData: any): Record<string, boolean> => {
     const classObject = {
       'day-cell': true,
     };
