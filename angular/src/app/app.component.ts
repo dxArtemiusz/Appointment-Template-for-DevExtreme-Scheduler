@@ -20,7 +20,9 @@ import { TooltipModule } from './tooltip/tooltip.component';
 export class AppComponent {
   @ViewChild('targetScheduler', { static: true })
   scheduler: DxSchedulerComponent;
-  dataSource: any;
+  dataSource: = new DataSource({
+      store: this.service.getData(),
+   });
 
   currentDate: Date = new Date(2021, 5, 2, 11, 30);
 
