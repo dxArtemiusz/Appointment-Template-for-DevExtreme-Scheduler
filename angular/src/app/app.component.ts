@@ -38,7 +38,7 @@ export class AppComponent {
     this.scheduler.instance.hideAppointmentTooltip();
   }
 
-  isDeleteButtonExist({ appointmentData }: { appointmentData: dxSchedulerAppointment}): boolean {
+  isDeleteButtonExist = ({ appointmentData }: { appointmentData: dxSchedulerAppointment}): boolean => {
       const schedulerInstance = this.scheduler.instance;
       const isAppointmentDisabled = appointmentData.disabled;
       const isDeleteAllowed = (schedulerInstance.option('editing') && schedulerInstance.option('editing.allowDeleting') === true)
