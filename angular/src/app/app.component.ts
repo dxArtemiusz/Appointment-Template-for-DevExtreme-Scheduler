@@ -26,7 +26,7 @@ export class AppComponent {
 
   currentDate: Date = new Date(2021, 5, 2, 11, 30);
 
-  resourcesDataSource: Employee[];
+  resourcesDataSource = this.service.getEmployees();
 
   constructor(service: Service) {
     this.dataSource = new DataSource({
