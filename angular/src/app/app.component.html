@@ -35,7 +35,10 @@
   </ng-container>
 
   <div *dxTemplate="let employee of 'resourceCellTemplate'">
-    <div class="name" [style.background]="employee.color">
+    <div 
+      class="name" 
+      [style.background]="employee.color"
+    >
       <h2>{{ employee.text }}</h2>
     </div>
     <div class="avatar">
