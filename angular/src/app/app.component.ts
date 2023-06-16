@@ -20,7 +20,7 @@ import { TooltipModule } from './tooltip/tooltip.component';
 export class AppComponent {
   @ViewChild('targetScheduler', { static: true })
   scheduler: DxSchedulerComponent;
-  dataSource: = new DataSource({
+  dataSource = new DataSource({
       store: this.service.getData(),
    });
 
@@ -48,14 +48,9 @@ export class AppComponent {
   }
 
   markWeekEnd = (cellData: any): Record<string, boolean> => {
-    function isWeekEnd(date) {
-      const day = date.getDay();
-      return day === 0 || day === 6;
-    }
-
     return {
       [`employee-${cellData.groups.employeeID}`]: true,
-      [`employee-weekend-${cellData.groups.employeeID}`]: isWeekEnd(cellData.startDate),
+      [`employee-weekend-${cellData.groups.employeeID}`]: this.isWeekEnd(cellData.startDate),
     };
   };
 
@@ -68,17 +63,21 @@ export class AppComponent {
     return classObject;
   };
 
-  static getCurrentTraining(date, employeeID) {
+  getColor = (id: number): string => this.resourcesDataSource.find((employee) => 
+        employee.id === id
+      ).color;
+      
+      
+  private getCurrentTrainingClass = (date: number, employeeID: number): string => {
     const result = (date + employeeID) % 3;
     const currentTraining = `training-background-${result}`;
 
     return currentTraining;
   }
 
-
-  getColor = (id: number): string => this.resourcesDataSource.find((employee) => 
-        employee.id === id
-      ).color;
+  private isWeekEnd = (date: Date): boolean => {
+    const day = date.getDay();
+    return day === 0 || day === 6;
   }
 }
 
