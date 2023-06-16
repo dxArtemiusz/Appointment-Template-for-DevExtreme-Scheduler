@@ -1,13 +1,11 @@
-import { NgModule, Component, enableProdMode, ViewChild } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { DxSchedulerModule, DxTemplateModule, DxSchedulerComponent } from 'devextreme-angular';
+import { Component, ViewChild } from '@angular/core';
+import { DxSchedulerComponent } from 'devextreme-angular';
 import DataSource from 'devextreme/data/data_source';
-import { Service, Employee } from './app.service';
-import { ApplyPipe } from './pipes';
+import { Service } from './app.service';
+
 import { ClickEvent } from 'devextreme/ui/button';
 import { dxSchedulerAppointment } from 'devextreme/ui/scheduler';
-import { TooltipModule } from './tooltip/tooltip.component';
+
 
 
 
@@ -81,14 +79,4 @@ export class AppComponent {
   }
 }
 
-@NgModule({
-  imports: [
-    BrowserModule,
-    DxSchedulerModule,
-    DxTemplateModule,
-    TooltipModule
-  ],
-  declarations: [AppComponent, ApplyPipe],
-  bootstrap: [AppComponent],
-})
-export class AppModule { }
+

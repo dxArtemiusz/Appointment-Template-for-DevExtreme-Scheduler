@@ -1,6 +1,4 @@
-import { NgModule, Component, Input, Output, EventEmitter} from '@angular/core';
-import { CommonModule } from '@angular/common';  
-import { DxButtonModule } from 'devextreme-angular';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { ClickEvent } from 'devextreme/ui/button';
 import { dxSchedulerAppointment } from 'devextreme/ui/scheduler';
 
@@ -14,10 +12,3 @@ export class TooltipComponent {
     @Input() isDeleteButtonExist: boolean;
     @Output() onDeleteButtonClick = new EventEmitter<ClickEvent>();
 }
-
-@NgModule({
-imports: [DxButtonModule, CommonModule],
-        declarations: [TooltipComponent],
-        exports: [TooltipComponent]
-})
-export class TooltipModule { }
