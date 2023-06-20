@@ -115,7 +115,7 @@ export class Service {
     return employees;
   }
 
-  getData(): Data {
+  getData(): Data[] {
     return data;
   }
 }
