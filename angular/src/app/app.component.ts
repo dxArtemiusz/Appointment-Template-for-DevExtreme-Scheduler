@@ -6,9 +6,6 @@ import { Service } from './app.service';
 import { ClickEvent } from 'devextreme/ui/button';
 import { dxSchedulerAppointment } from 'devextreme/ui/scheduler';
 
-
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,6 +15,7 @@ import { dxSchedulerAppointment } from 'devextreme/ui/scheduler';
 export class AppComponent {
   @ViewChild('targetScheduler', { static: true })
   scheduler: DxSchedulerComponent;
+  
   dataSource = new DataSource({
     store: this.service.getData(),
  });
@@ -78,5 +76,3 @@ export class AppComponent {
     return day === 0 || day === 6;
   }
 }
-
-
