@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { DxButtonModule } from 'devextreme-angular/ui/button';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DxSchedulerModule, DxTemplateModule } from 'devextreme-angular';
-import { TooltipModule } from './tooltip/tooltip.module';
-import { ApplyPipe } from './pipes';
 
 @NgModule({
-    imports: [
-      BrowserModule,
-      DxSchedulerModule,
-      DxTemplateModule,
-      TooltipModule
-    ],
-    declarations: [AppComponent, ApplyPipe],
-    bootstrap: [AppComponent],
-  })
-  export class AppModule { }
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    DxButtonModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule { }
